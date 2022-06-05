@@ -5,6 +5,6 @@
   <title>Flask Show Image</title>
 </head>
 <body>
-  <img style="width:1280px" src="data:;base64,{{ img_stream }}">
+	<img src="{{ url_for('img_stream')}}">
 </body>
 </html>

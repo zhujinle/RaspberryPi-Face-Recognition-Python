@@ -18,9 +18,12 @@ def video_feed():
 
 @app.route('/recognized_feed')
 def recognized_feed():
+        return render_template('new_picture.html')
+@app.route('/img_stream')
+def img_stream():
         test = getImageRecognized(None)
         img_stream = base64.b64encode(test).decode()
-        return render_template('new_picture.html', img_stream=img_stream)
+        return Response(test,mimetype='image/jpeg')
 
 if __name__ == '__main__':
 

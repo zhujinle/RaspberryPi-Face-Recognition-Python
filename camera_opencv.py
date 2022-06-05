@@ -2,7 +2,7 @@ import cv2
 import time
 from PIL import Image, ImageDraw
 
-face_model=cv2.CascadeClassifier(r'C:\Users\10260\Desktop\code\haarcascade_frontalface_default.xml')
+face_model=cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 def getImage(imgQueue):
     camera = cv2.VideoCapture(0)
     ret,img = camera.read()

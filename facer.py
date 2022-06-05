@@ -5,6 +5,7 @@ import numpy as np
 from PIL import Image, ImageDraw
 from multiprocessing import Process,Manager
 from numpy import array
+import time
 import os
 
 
@@ -12,7 +13,7 @@ import os
 def getImageRecognized(imgQueue):
     # 多线程
     # p = Process(target=f, args=())
-
+    time.sleep(1)
     camera = cv2.VideoCapture(0)
     ret, img = camera.read()
     # img = BGR_to_RGB(img)
@@ -20,7 +21,7 @@ def getImageRecognized(imgQueue):
     # print(img.dtype)
     ret, img = camera.read()
     camera.release()
-    imagePaths = list(paths.list_images(r'C:\Users\10260\Desktop\code\dataset'))
+    imagePaths = list(paths.list_images('./dataset/'))
     print(paths)
     # imagePaths = os.listdir('./dataset/')
 
